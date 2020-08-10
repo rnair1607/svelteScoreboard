@@ -1,4 +1,5 @@
 <script>
+  import { fade, fly } from "svelte/transition";
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();
@@ -32,7 +33,7 @@
   }
 </style>
 
-<div class="card">
+<div class="card" in:fly={{ x: 200, duration: 500 }} out:fade>
   <h1>
     {name}
     <button class="btn btn-sm" on:click={toggleControl}>
